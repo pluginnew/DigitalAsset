@@ -8,6 +8,22 @@ import java.math.BigDecimal;
 
 @Data
 public class AccountTransferBalanceRequest {
+  public String getReceiverId() {
+    return receiverId;
+  }
+
+  public void setReceiverId(String receiverId) {
+    this.receiverId = receiverId;
+  }
+
+  public BigDecimal getAmount() {
+    return amount;
+  }
+
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
+  }
+
   @NotNull
   private String receiverId;
   @NotNull

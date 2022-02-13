@@ -3,10 +3,13 @@ package com.db.awmd.challenge.web;
 import com.db.awmd.challenge.domain.Account;
 import com.db.awmd.challenge.exception.AccountNotFoundException;
 import com.db.awmd.challenge.exception.DuplicateAccountIdException;
+import com.db.awmd.challenge.service.EmailNotificationService;
 import com.db.awmd.challenge.service.account.AccountsService;
 import com.db.awmd.challenge.web.dto.AccountTransferBalanceRequest;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,6 +25,8 @@ import java.math.BigDecimal;
 @RequestMapping("/v1/accounts")
 @Slf4j
 public class AccountsController {
+
+  private static Logger log = LoggerFactory.getLogger(AccountsController.class);
 
   private final AccountsService accountsService;
 

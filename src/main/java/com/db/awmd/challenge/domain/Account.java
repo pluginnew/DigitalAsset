@@ -15,6 +15,17 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class Account {
+  public String getAccountId() {
+    return accountId;
+  }
+
+  public BigDecimal getBalance() {
+    return balance;
+  }
+
+  public void setBalance(BigDecimal balance) {
+    this.balance = balance;
+  }
 
   @NotNull
   @NotEmpty

@@ -15,6 +15,10 @@ public class AccountEventListener {
 
   private final NotificationService notificationService;
 
+  public AccountEventListener(NotificationService notificationService) {
+    this.notificationService = notificationService;
+  }
+
   @EventListener
   public void onAccountBalanceTransferred(AccountBalanceTransferredEvent event) {
     final AccountBalanceTransferredEvent.Payload payload = event.payload();

@@ -19,6 +19,11 @@ public class AccountsService {
 
   @Getter
   private final AccountsRepository accountsRepository;
+
+  public AccountsRepository getAccountsRepository() {
+    return accountsRepository;
+  }
+
   private final ApplicationEventPublisher applicationEventPublisher;
 
   @Autowired
@@ -77,6 +82,20 @@ public class AccountsService {
   @RequiredArgsConstructor
   private static class AccountSyncOrderResolver {
     private final Account first;
+
+    public AccountSyncOrderResolver(Account first, Account second) {
+      this.first = first;
+      this.second = second;
+    }
+
+    public Account getFirst() {
+      return first;
+    }
+
+    public Account getSecond() {
+      return second;
+    }
+
     private final Account second;
 
     public static AccountSyncOrderResolver resolve(Account a1, Account a2) {
